@@ -1,6 +1,8 @@
 variable "tools" {
-  vault={
-    name = "vault"
-    instance_type = "t3.small"
+  default = {
+    vault={
+      name = "vault"
+      instance_type = "t3.small"
+    }
   }
 }
