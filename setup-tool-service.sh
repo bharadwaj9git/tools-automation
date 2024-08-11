@@ -1,0 +1,1 @@
+ansible-playbook -i ${tool_name}.saidevops79.online, -e ansible_user=ec2-user -e ansible_password=${SSH_PWD}  -e tool_name_name=${tool_name} setup-tools-service.yml
