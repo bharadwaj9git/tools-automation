@@ -34,8 +34,8 @@ resource "aws_instance" "main" {
   instance_market_options {
     market_type = "spot"
     spot_options {
-      instance_interruption_behavior = "stop"
-      spot_instance_type = "persistent"
+      instance_interruption_behavior  = "stop"
+      spot_instance_type              = "persistent"
     }
   }
 
@@ -52,5 +52,12 @@ resource "aws_route53_record" "main" {
   records = [aws_instance.main.public_ip]
 }
 
+resource "aws_route53_record" "private" {
+  zone_id = data.aws_route53_zone.main.zone_id
+  name    = "${var.name}.saidevops79.online"
+  type    = "A"
+  ttl     = 5
+  records = [aws_instance.main.public_ip]
+}
 
 
