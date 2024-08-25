@@ -25,7 +25,6 @@ resource "aws_security_group" "main" {
   }
 }
 
-
 resource "aws_instance" "main" {
   ami           = data.aws_ami.ami.image_id
   instance_type = var.instance_type
